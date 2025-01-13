@@ -4,6 +4,7 @@
 
 # Ignore Qt project user settings
 *.pro.user
+.qtcreator
 
 # Ignore other temporary or backup files
 *.swp
