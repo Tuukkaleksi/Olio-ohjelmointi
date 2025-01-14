@@ -1,9 +1,9 @@
 #include "game.h"
 
-Game::Game(int maxNumber) : maxNumber(maxNumber), arvaukset(0) {
+Game::Game(int maxnum) : maxnum(maxnum), arvaukset(0) {
     srand(time(NULL));
-    randNumber = rand() % maxNumber + 1;
-    cout << "GAME CONSTRUCTION: object initialized with " << maxNumber << " as a max value" << endl;
+    satluku = rand() % maxnum + 1;
+    cout << "GAME CONSTRUCTION: object initialized with " << maxnum << " as a max value" << endl;
 }
 
 Game::~Game() {
@@ -12,19 +12,19 @@ Game::~Game() {
 
 void Game::play() {
     do {
-        cout << "Arvaa luku (1-" << maxNumber << "): ";
-        cin >> lastArvaus;
-        arvaukset++;
-        if (lastArvaus < randNumber) {
+        cout << "Arvaa luku (1-" << maxnum << "): ";
+        cin >> arvaus;
+        yritykset++;
+        if (arvaus < satluku) {
             cout << "Liian pieni!" << endl;
-        } else if (lastArvaus > randNumber) {
+        } else if (arvaus > satluku) {
             cout << "Liian suuri!" << endl;
         }
-    } while (lastArvaus != randNumber);
+    } while (arvaus != satluku);
     printGameResult();
 }
 
 void Game::printGameResult() {
-    cout << "Oikea vastaus oli " << randNumber << "." << endl;
-    cout << "Arvaukset: " << arvaukset << "." << endl;
+    cout << "Oikea vastaus oli " << satluku << "." << endl;
+    cout << "Arvaukset: " << yritykset << "." << endl;
 }

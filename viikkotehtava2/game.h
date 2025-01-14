@@ -7,17 +7,17 @@ using namespace std;
 class Game
 {
 public:
-    Game(int maxNumber);
+    Game(int maxnum);
     void play();
     void printGameResult();
     ~Game();
 
 private:
-    int maxNumber;
-    int minNumber;
-    int lastArvaus;
-    int randNumber;
-    int arvaukset;
+    int maxnum;
+    int minnum;
+    int arvaus;
+    int satluku;
+    int yritykset;
 };
 
 #endif // GAME_H
